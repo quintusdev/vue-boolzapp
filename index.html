@@ -86,29 +86,33 @@
                 <div class="col-8 p-0">
                     <!-- SEZIONE UTENTE CONTATTATO -->
                     <div v-if="selectedChat" class="chat-header d-flex justify-content-between">
-                        <div class="avatar d-flex align-items-center">
-                            <img class="rounded-circle" :src="selectedChat.avatar" alt="Immagine Utente">
-                            <h6>{{ selectedChat.name }}</h6>
-                            <p>{{ selectedChat.access }}</p>
-                        </div>
-                        <div class="icon d-flex align-items-center">
-                            <i class="fa-solid fa-magnifying-glass fa-xl"></i>
-                            <i class="fa-solid fa-paperclip fa-xl"></i>
-                            <i class="fa-solid fa-ellipsis-vertical fa-xl"></i>
-                        </div>
+                      <div class="avatar d-flex align-items-center">
+                        <img class="rounded-circle" :src="selectedChat.avatar" alt="Immagine Utente">
+                        <h6>{{ selectedChat.name }}</h6>
+                        <p>{{ selectedChat.access }}</p>
+                      </div>
+                      <div class="icon d-flex align-items-center">
+                        <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+                        <i class="fa-solid fa-paperclip fa-xl"></i>
+                        <i class="fa-solid fa-ellipsis-vertical fa-xl"></i>
+                      </div>
                     </div>
                     <!-- FINE SEZIONE UTENTE CONTATTATO -->
+                  
                     <!-- SEZIONE MESSAGGI -->
                     <div v-if="selectedChat" class="message-list">
-                        <message v-for="message in selectedChat.messages" :text="message.message" :incoming="message.status === 'received'" :timestamp="message.date" />
+                      <div v-for="(message, index) in selectedChat.messages" :key="index" class="message" :class="{'received': message.status === 'received', 'sent': message.status === 'sent'}">
+                        <p>{{ message.message }}</p>
+                        <span class="date">{{ message.date }}</span>
+                      </div>
                     </div>
                     <!-- FINE SEZIONE MESSAGGI -->
+                  
                     <!-- SEZIONE INPUT MESSAGGIO -->
                     <div v-if="selectedChat" class="message-input chat_footer">
-                        <input type="text" v-model="newMessage" placeholder="Scrivi qui un messaggio" @keyup.enter()>
+                      <input type="text" v-model="newMessage" placeholder="Scrivi qui un messaggio" @keyup.enter="sendMessage">
                     </div>
                     <!-- FINE SEZIONE INPUT MESSAGGIO -->
-                </div>
            </div>
         </div>
     </div>

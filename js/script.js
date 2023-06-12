@@ -179,31 +179,31 @@ createApp({
   };
 },
 methods: {
-  selectChat(chat) {
-    this.selectedChat = chat;
-  },
-   //con questa funzione implemento una risposta automatica dopo 1 sec.
-   sendMessage() {
-    if (this.newMessage.trim() !== '') {
-      this.selectedChat.messages.push({
-        text: this.newMessage,
-        received: false,
-        date: new Date().toLocaleTimeString()
-      });
-      this.newMessage = '';
-      setTimeout(() => {
-        const lastMessage = this.selectedChat.messages[this.selectedChat.messages.length - 1];
-        const replyText = this.reply[lastMessage.text.toLowerCase()];
-        if (replyText) {
-          this.selectedChat.messages.push({
-            text: replyText,
-            received: true,
-            access: 'Ultimo messaggio inviato 12:00',
-            date: new Date().toLocaleTimeString()
-          });
-        }
-      }, 1000);
+    selectChat(chat) {
+      this.selectedChat = chat;
+    },
+    // Con questa funzione implemento una risposta automatica dopo 1 secondo
+    sendMessage() {
+      if (this.newMessage.trim() !== '') {
+        this.selectedChat.messages.push({
+          date: new Date().toLocaleTimeString(),
+          message: this.newMessage,
+          status: 'sent'
+        });
+        this.newMessage = '';
+        
+        setTimeout(() => {
+          const lastMessage = this.selectedChat.messages[this.selectedChat.messages.length - 1];
+          const replyText = this.reply[lastMessage.message.toLowerCase()];
+          if (replyText) {
+            this.selectedChat.messages.push({
+              date: new Date().toLocaleTimeString(),
+              message: replyText,
+              status: 'received'
+            });
+          }
+        }, 1000);
+      }
     }
-  }
 }
 }).mount('#app');
