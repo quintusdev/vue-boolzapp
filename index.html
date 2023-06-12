@@ -103,7 +103,7 @@
                     <div v-if="selectedChat" class="message-list">
                       <div v-for="(message, index) in selectedChat.messages" :key="index" class="message" :class="{'received': message.status === 'received', 'sent': message.status === 'sent'}">
                         <p>{{ message.message }}</p>
-                        <span class="date">{{ message.date }}</span>
+                        <span> 15:30</span>
                       </div>
                     </div>
                     <!-- FINE SEZIONE MESSAGGI -->
@@ -113,6 +113,7 @@
                       <input type="text" v-model="newMessage" placeholder="Scrivi qui un messaggio" @keyup.enter="sendMessage">
                     </div>
                     <!-- FINE SEZIONE INPUT MESSAGGIO -->
+                </div>
            </div>
         </div>
     </div>
