@@ -191,8 +191,8 @@ methods: {
           status: 'sent'
         });
         this.newMessage = '';
-
-        //funzione per creare una risposta automatica dopo 1 secondo
+  
+        // Funzione per creare una risposta automatica dopo 1 secondo
         setTimeout(() => {
           const lastMessage = this.selectedChat.messages[this.selectedChat.messages.length - 1];
           const replyText = this.messages[lastMessage.message.toLowerCase()];
@@ -206,5 +206,12 @@ methods: {
         }, 1000);
       }
     },
-}
+    // Funzione per estrarre l'orario dall'array
+    getOrario() {
+      // Estrarre solo l'orario dalla data
+      const orario = this.selectedChat.messages[this.selectedChat.messages.length - 1].date.split(' ')[1];
+      return orario;
+    }
+  }
+  
 }).mount('#app');

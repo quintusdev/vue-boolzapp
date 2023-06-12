@@ -263,6 +263,10 @@ body{
   color: #888;
 }
 
+.last-access{
+  margin: 30px 3px 0 5px;
+}
+
 .chat-area .message-list .message span {
   font-weight: 700;
   font-size: 15px;
