@@ -48,8 +48,11 @@ body{
 
 .update{
   width: 100%;
-  background-color: rgb(26, 77, 78);
-  height: 80px;
+  background-color: #8edafc;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  cursor: pointer;
 }
 
 .search{
@@ -107,4 +110,25 @@ body{
   color: #b1b1b1;
   margin-right: 20px;
   margin-left: 5px;
+}
+
+/* STYLE SEZIONE UPDATE */
+.update .icon{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: 15px 15px;
+  background-color: #fff;
+}
+
+.update .icon i{
+  font-size: 20px;
+  margin: 25px 12px;
+  border-radius: 50%;
+  color: #8edafc;
+}
+
+.update .descr a{
+  font-size: 14px;
+  color: #537b8e;
 }
