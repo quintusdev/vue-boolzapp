@@ -22,18 +22,16 @@ body{
 }
 
 .row{
-  width: 100%;
-  background-color: brown;
+  width: 100%;;
 }
 
 .col-4{
   height: 90vh;
-  background-color: coral;
 }
 
 .col-8{
   height: 90vh;
-  background-color: burlywood;
+  background-color: #eaeaea;
 }
 
 /* STYLE CONTENUTO COL-5 */
@@ -57,33 +55,28 @@ body{
 
 .search{
   width: 100%;
-  background-color: rgb(253, 125, 5);
-  height: 50px;
+  background-color: #f9f9f9;
 }
 
 .chat-list{
   width: 100%;
-  background-color: rgb(71, 5, 253);
-  height: calc(100% - 210px);
 }
 
 /* STYLE CONTENUTO COL-8 */
 .chat-header{
   width: 100%;
-  background-color: cadetblue;
-  height: 80px;
 }
 
 .message-list{
   width: 100%;
   background: url(../img/mine.jpg);
-  height: calc(100% - 160px);
 }
 
 .chat_footer{
   width: 100%;
   background-color: rgb(36, 65, 228);
   height: 80px;
+  bottom: 0;
 }
 
 /* STYLE AVATAR UTENTE SX */
@@ -131,4 +124,145 @@ body{
 .update .descr a{
   font-size: 14px;
   color: #537b8e;
+}
+
+/* STYLE SEARCH BAR */
+.has-search .form-control {
+  padding-left: 5.375rem;
+}
+
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 4.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+}
+
+.fa-search{
+  border-right: 1px solid #eaeaea;
+}
+
+/* SEZIONE CHAT LIST */
+.chat-list {
+  width: 100%;
+  background-color: #fff;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.chat-list .chat {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.chat-list .chat:hover{
+  background-color: #e9ebeb;
+}
+
+.chat-list .avatar {
+  width: 55px;
+  height: 55px;
+  margin: 10px 10px;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.chat-list .time span{
+  color: #b1b1b1;
+  font-size: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* SEZIONE CHAT AREA COL DX */
+
+/* SEZIONE CHAT-HEADER COL DX */
+
+.chat-header .avatar img{
+  width: 55px;
+  height: 55px;
+  margin: 10px 10px;
+}
+
+.chat-header .avatar span{
+  font-size: 18px;
+  font-weight: 600;
+  color: black;
+}
+
+.chat-header .icon-header{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px 10px;
+}
+
+.chat-header .icon i{
+  color: #b1b1b1;
+  margin-right: 20px;
+  margin-left: 5px;
+}
+
+.chat-header .avatar p{
+  color: #b1b1b1;
+  margin-right: 20px;
+  margin-left: 5px;
+}
+/* FINE SEZIONE CHAT-HEADER COL DX */
+
+/* SEZIONE CHAT AREA MESSAGGI UTENTE */
+.chat-area .message-list{
+  width: 100%;
+  height: calc(100% - 155px);
+  background: url(../img/mine.jpg);
+}
+
+.chat-area .message-list .message {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.chat-area .message-list .message.received {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+.chat-area .message-list .message.sent {
+  margin: 50px;
+  background-color:#d5f9ba;
+  color: #fff;
+  text-align: right;
+}
+
+.chat-area .message-list .message span {
+  font-size: 12px;
+  color: #999999;
+}
+
+.chat-area .chat_footer{
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  width: 95%;
+}
+
+.chat-area .message-input {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-end;
 }

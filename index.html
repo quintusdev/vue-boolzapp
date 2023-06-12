@@ -29,6 +29,7 @@
         <div class="container p-0">
            <div class="row p-0 m-0">
                 <div class="col-4 p-0">
+                    <!-- SEZIONE AVATAR UTENTE -->
                     <div class="avatar_utente">
                         <div class="img-utente">
                             <img class="rounded-circle" src="img/avatar_io.jpg" alt="Immagine Utente">
@@ -40,6 +41,8 @@
                             <i class="fa-solid fa-ellipsis-vertical fa-xl"></i>
                         </div>
                     </div>
+                    <!-- FINE SEZIONE AVATAR UTENTE -->
+                    <!-- SEZIONE UPDATE -->
                     <div class="update p-1">
                         <div class="icon rounded-circle">
                             <i class="fa-solid fa-bell-slash fa-xl"></i>
@@ -50,23 +53,62 @@
                             <a href="#">Attiva notifiche desktop</a>
                         </div>
                     </div>
+                    <!-- FINE SEZIONE UPDATE -->
+                    <!-- SEZIONE SEARCH BAR -->
                     <div class="search">
-                        BARRA RICERCA
+                       <!-- ICONA LENTE -->
+                       <div class="form-group has-search p-1">
+                        <!-- INPUT SEARCH BAR  -->
+                        <span class="fa fa-search form-control-feedback"></span>
+                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
                     </div>
+                    </div>
+                    <!-- FINE SEZIONE SEARCH BAR -->
+                    <!-- SEZIONE CHAT LIST -->
                     <div class="chat-list">
-                        LISTA CHAT
+                        <div v-for="chat in chats" class="chat d-flex justify-content-between" @click="selectChat(chat)">
+                            <div class="info-utente d-flex align-items-center">
+                                <div class="avatar">
+                                    <img :src="chat.avatar" alt="Chat Avatar">
+                                </div>
+                                <div class="chat-details">
+                                    <h6>{{ chat.name }}</h6>
+                                    <p>{{ chat.access }}</p>
+                                </div>
+                            </div>
+                            <div class="time">
+                                <span>12:00</span>
+                            </div>
+                        </div>
                     </div>
+                    <!-- FINE SEZIONE CHAT LIST -->
                 </div>
                 <div class="col-8 p-0">
-                    <div class="chat-header">
-                        CHAT UTENTE
+                    <!-- SEZIONE UTENTE CONTATTATO -->
+                    <div v-if="selectedChat" class="chat-header d-flex justify-content-between">
+                        <div class="avatar d-flex align-items-center">
+                            <img class="rounded-circle" :src="selectedChat.avatar" alt="Immagine Utente">
+                            <h6>{{ selectedChat.name }}</h6>
+                            <p>{{ selectedChat.access }}</p>
+                        </div>
+                        <div class="icon d-flex align-items-center">
+                            <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+                            <i class="fa-solid fa-paperclip fa-xl"></i>
+                            <i class="fa-solid fa-ellipsis-vertical fa-xl"></i>
+                        </div>
                     </div>
-                    <div class="message-list">
-                        LISTA MESSAGGI
+                    <!-- FINE SEZIONE UTENTE CONTATTATO -->
+                    <!-- SEZIONE MESSAGGI -->
+                    <div v-if="selectedChat" class="message-list">
+                        <message v-for="message in selectedChat.messages" :text="message.message" :incoming="message.status === 'received'" :timestamp="message.date" />
                     </div>
-                    <div class="chat-footer">
-                        INSERIMENTO MESSAGGIO
+                    <!-- FINE SEZIONE MESSAGGI -->
+                    <!-- SEZIONE INPUT MESSAGGIO -->
+                    <div v-if="selectedChat" class="message-input chat_footer">
+                        <input type="text" v-model="newMessage" placeholder="Scrivi qui un messaggio" @keyup.enter()>
                     </div>
+                    <!-- FINE SEZIONE INPUT MESSAGGIO -->
+                </div>
            </div>
         </div>
     </div>
