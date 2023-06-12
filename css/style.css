@@ -1,18 +1,38 @@
 *{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: #111b21;
-    font-family: 'Roboto', sans-serif;
-  }
+  background: linear-gradient(180deg, #009688 15%, #D9DBD4 15%);
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+}
   
-  .container {
-    max-width: 80%;
-    margin: 0 auto;
-  }
+.container {
+  position: absolute;
+  max-width: 80%;
+  margin: 0 auto;
+  height: 90vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: bisque;
+}
 
-  
-  
+.row {
+  background-color: #00a884;
+  height: 90vh;
+}
+
+.col-5{
+  height: 90vh;
+  background-color: brown;
+}
+
+.col-7{
+  height: 90vh;
+  background-color: rgb(57, 117, 7);
+}
