@@ -19,7 +19,6 @@ body{
 
 .container{
   width: 100%;
-  background-color: bisque;
 }
 
 .row{
@@ -42,6 +41,7 @@ body{
   width: 100%;
   background-color: #eaeaea;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   cursor: pointer;
 }
@@ -87,7 +87,6 @@ body{
 .avatar_utente img{
   width: 55px;
   height: 55px;
-  border-radius: 50%;
   margin: 10px 10px;
 }
 
@@ -97,3 +96,15 @@ body{
   color: black;
 }
 
+.icon{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px 10px;
+}
+
+.avatar_utente .icon i{
+  color: #b1b1b1;
+  margin-right: 20px;
+  margin-left: 5px;
+}
