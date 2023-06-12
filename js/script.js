@@ -191,10 +191,11 @@ methods: {
           status: 'sent'
         });
         this.newMessage = '';
+
         //funzione per creare una risposta automatica dopo 1 secondo
         setTimeout(() => {
           const lastMessage = this.selectedChat.messages[this.selectedChat.messages.length - 1];
-          const replyText = this.reply[lastMessage.message.toLowerCase()];
+          const replyText = this.messages[lastMessage.message.toLowerCase()];
           if (replyText) {
             this.selectedChat.messages.push({
               date: new Date().toLocaleTimeString(),
@@ -204,6 +205,6 @@ methods: {
           }
         }, 1000);
       }
-    }
+    },
 }
 }).mount('#app');

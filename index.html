@@ -102,8 +102,8 @@
                     <!-- SEZIONE MESSAGGI -->
                     <div v-if="selectedChat" class="message-list">
                       <div v-for="(message, index) in selectedChat.messages" :key="index" class="message" :class="{'received': message.status === 'received', 'sent': message.status === 'sent'}">
-                        <p>{{ message.message }}</p>
-                        <span> 15:30</span>
+                        <span>{{ message.message }}</span>
+                        <span> 15.30 </span>
                       </div>
                     </div>
                     <!-- FINE SEZIONE MESSAGGI -->

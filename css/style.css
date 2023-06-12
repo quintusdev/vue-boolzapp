@@ -19,6 +19,7 @@ body{
 
 .container{
   width: 100%;
+  margin-bottom: 30px;
 }
 
 .row{
@@ -101,6 +102,11 @@ body{
   color: #b1b1b1;
   margin-right: 20px;
   margin-left: 5px;
+}
+
+#ora{
+  font-size: 8px;
+  font-weight: 600;
 }
 
 /* STYLE SEZIONE UPDATE */
@@ -225,46 +231,50 @@ body{
 /* SEZIONE CHAT AREA MESSAGGI UTENTE */
 .message-list {
   width: 100%;
-  height: 78vh;
+  height: 77vh;
   display: flex;
+  padding: 30px;
   flex-direction: column;
   background: url(../img/mine.jpg);
 }
 
 .message {
-  padding: 3px;
+  padding: 25px;
   margin-bottom: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .received {
   background-color: #f2f2f2;
   align-self: flex-start;
-  margin: 7px 50px;
-  padding: 5px 12px;
+  margin: 10px 50px;
+  padding: 13px 24px;
 }
 
 .sent {
   background-color: #d5f9ba;
   align-self: flex-end;
-  margin: 7px 50px;
-  padding: 5px 12px;
+  margin: 10px 50px;
+  padding: 13px 24px;
 }
 
 .date {
-  font-size: 12px;
+  font-size: 8px;
   color: #888;
 }
 
-.chat-area .message-list .message p {
+.chat-area .message-list .message span {
   font-weight: 700;
-  font-size: 12px;
+  font-size: 15px;
   color: #000000;
+  margin: 10px 40px;
+  align-items: flex-start;
 }
 
 .chat-area .message-list .message span {
-  font-size: 8px;
+  font-size: 10px;
   color: #999999;
+  padding-left: 40px;
 }
 
 /* SEZIONE CHAT FOOTER */
