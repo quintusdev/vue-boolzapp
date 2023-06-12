@@ -109,8 +109,10 @@
                     <!-- FINE SEZIONE MESSAGGI -->
                   
                     <!-- SEZIONE INPUT MESSAGGIO -->
-                    <div v-if="selectedChat" class="message-input chat_footer">
-                      <input type="text" v-model="newMessage" placeholder="Scrivi qui un messaggio" @keyup.enter="sendMessage">
+                    <div v-if="selectedChat" class="message-input chat_footer d-flex justify-content-around align-items-center p-2">
+                        <i class="fa-regular fa-face-smile ms-2 m-1"></i>
+                        <input type="text" v-model="newMessage" class="form-control p-2 m-3" placeholder="Scrivi un messaggio" @keyup.enter="sendMessage">
+                        <i class="fas fa-microphone col-auto me-2 m-1"></i>
                     </div>
                     <!-- FINE SEZIONE INPUT MESSAGGIO -->
                 </div>

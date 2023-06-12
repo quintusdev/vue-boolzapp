@@ -74,8 +74,6 @@ body{
 
 .chat_footer{
   width: 100%;
-  background-color: rgb(36, 65, 228);
-  height: 80px;
   bottom: 0;
 }
 
@@ -271,13 +269,6 @@ body{
 
 /* SEZIONE CHAT FOOTER */
 
-.chat-area .chat_footer{
-  display: flex;
-  width: 95%;
-}
-
-.chat-area .message-input {
-  margin-bottom: 20px;
-  display: flex;
-  align-items: flex-end;
+.chat_footer i{
+  font-size: 20px;
 }
