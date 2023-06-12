@@ -40,8 +40,10 @@ body{
 /* STYLE CONTENUTO COL-5 */
 .avatar_utente{
   width: 100%;
-  background-color: cadetblue;
-  height: 80px;
+  background-color: #eaeaea;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
 .update{
@@ -80,3 +82,18 @@ body{
   background-color: rgb(36, 65, 228);
   height: 80px;
 }
+
+/* STYLE AVATAR UTENTE SX */
+.avatar_utente img{
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  margin: 10px 10px;
+}
+
+.avatar_utente span{
+  font-size: 18px;
+  font-weight: 600;
+  color: black;
+}
+
