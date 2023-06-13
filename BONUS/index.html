@@ -73,11 +73,11 @@
                                 </div>
                                 <div class="chat-details">
                                     <h6>{{ chat.name }}</h6>
-                                    <span>Ultimo accesso il {{chat.access}}</span>
+                                    <span>{{ getLastMessage(chat) }}</span>
                                 </div>
                             </div>
                             <div class="time">
-                                <span>{{ chat.time }}</span>
+                                <span>{{ chat.access }}</span>
                             </div>
                         </div>
                     </div>
@@ -91,7 +91,7 @@
                         <img class="rounded-circle" :src="selectedChat.avatar" alt="Immagine Utente">
                         <div>
                             <h6>{{selectedChat.name}}</h6>
-                            <span>Ultimo accesso il {{selectedChat.access}}</span>
+                            <span>Ultimo accesso il {{selectedChat.time.slice(0, 5)}}</span>
                         </div>
                       </div>
                       <div class="icon d-flex align-items-center">
@@ -106,7 +106,8 @@
                     <div v-if="selectedChat" class="message-list">
                         <div v-for="(message, index) in selectedChat.messages" :key="index" class="message block" :class="{'received': message.status === 'received', 'sent': message.status === 'sent'}">
                             <h6>{{ message.message }}</h6>
-                            <span id="ora">{{ message.date }}</span>
+                            <!-- inserisco l'ora prendendo i valori dopo il valore 11 e prima del  valore 16 -->
+                            <span id="ora">{{ message.date.slice(10, 15) }}</span>
                             <div class="btn-group">
                                 <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
                                 </button>
