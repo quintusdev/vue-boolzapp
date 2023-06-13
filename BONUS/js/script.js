@@ -210,6 +210,12 @@ methods: {
         let contactName = chats.name.toLowerCase();
         chats.visible = contactName.includes(nameSearched);
     });
+    },
+    //Funzione che al click del menu elimina messaggio cancella l'ultimo
+    deleteMessage() {
+    if (this.selectedChat.messages.length > 0) {
+        this.selectedChat.messages.pop();
     }
+}
 }
 }).mount('#app');

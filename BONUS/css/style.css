@@ -31,6 +31,7 @@ body{
 }
 
 .col-8{
+  position: relative;
   height: 90vh;
   background-color: #eaeaea;
 }
@@ -74,12 +75,14 @@ body{
   width: 100%;
   background: url(../img/mine.jpg);
   overflow-y: auto;
-  height: calc(100% - 165px);
+  height: calc(100% - 150px);
 }
 
 .chat_footer{
+  position: absolute;
   width: 100%;
   bottom: 0;
+  left: 0;
   background-color: #fff;
 }
 
@@ -198,12 +201,28 @@ body{
   color: #aaa;
 }
 
+/* VISIBILITA' LISTA CON RICERCA */
 .vison{
   display: block !important;
 }
 
 .visoff{
   display: none !important;
+}
+
+/* VISIBILITA' MENU A TENDINA MESSAGGIO */
+
+.message-list .message .hover{
+  position: absolute;
+  right: 5px;
+  top: 20%;
+  display: none;
+}
+
+.btn-group{
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 /* SEZIONE CHAT AREA COL DX */
@@ -261,20 +280,22 @@ body{
   padding: 25px;
   margin-bottom: 10px;
   border-radius: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 .received {
   background-color: #f2f2f2;
   align-self: flex-start;
   margin: 20px 50px;
-  padding: 10px 90px 5px 10px;
+  padding: 10px 90px 15px 10px;
 }
 
 .sent {
   background-color: #d5f9ba;
   align-self: flex-end;
-  margin: 20px 50px;
-  padding: 10px 90px 5px 10px;
+  margin: 20px 103px;
+  padding: 10px 40px 15px 10px;
 }
 
 .date {
@@ -291,6 +312,7 @@ body{
   font-size: 14px;
   color: #000000;
   margin: 10px 40px;
+  padding: 15px;
   align-items: flex-start;
 }
 
@@ -298,7 +320,8 @@ body{
   position: absolute;
   bottom: 5px;
   right: 3px;
-  font-size: 12px;
+  padding: 9px 5px 0 0;
+  font-size: 9px;
   color: #999999;
 }
 
