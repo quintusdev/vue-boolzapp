@@ -8,7 +8,7 @@ createApp({
             name: 'Michele',
             avatar: './img/avatar_1.jpg',
             visible: true,
-            access: 'Ultimo messaggio inviato 12:00',
+            access: 'Ultimo messaggio inviato',
             messages: [
                 {
                     date: '10/01/2020 15:30:55',
@@ -31,7 +31,7 @@ createApp({
             name: 'Fabio',
             avatar: './img/avatar_2.jpg',
             visible: true,
-            access: 'Ultimo messaggio inviato 12:00',
+            access: 'Ultimo messaggio inviato',
             messages: [
                 {
                     date: '20/03/2020 16:30:00',
@@ -54,7 +54,7 @@ createApp({
             name: 'Samuele',
             avatar: './img/avatar_3.jpg',
             visible: true,
-            access: 'Ultimo messaggio inviato 12:00',
+            access: 'Ultimo messaggio inviato',
             messages: [
                 {
                     date: '28/03/2020 10:10:40',
@@ -77,7 +77,7 @@ createApp({
             name: 'Alessandro B.',
             avatar: './img/avatar_4.jpg',
             visible: true,
-            access: 'Ultimo messaggio inviato 12:00',
+            access: 'Ultimo messaggio inviato',
             messages: [
                 {
                     date: '10/01/2020 15:30:55',
@@ -95,7 +95,7 @@ createApp({
             name: 'Alessandro L.',
             avatar: './img/avatar_5.jpg',
             visible: true,
-            access: 'Ultimo messaggio inviato 12:00',
+            access: 'Ultimo messaggio inviato',
             messages: [
                 {
                     date: '10/01/2020 15:30:55',
@@ -113,7 +113,7 @@ createApp({
             name: 'Claudia',
             avatar: './img/avatar_5.jpg',
             visible: true,
-            access: 'Ultimo messaggio inviato 12:00',
+            access: 'Ultimo messaggio inviato',
             messages: [
                 {
                     date: '10/01/2020 15:30:55',
@@ -136,7 +136,7 @@ createApp({
             name: 'Federico',
             avatar: './img/avatar_7.jpg',
             visible: true,
-            access: 'Ultimo messaggio inviato 12:00',
+            access: 'Ultimo messaggio inviato',
             messages: [
                 {
                     date: '10/01/2020 15:30:55',
@@ -153,7 +153,7 @@ createApp({
         {
             name: 'Davide',
             avatar: './img/avatar_8.jpg',
-            access: 'Ultimo messaggio inviato 12:00',
+            access: 'Ultimo messaggio inviato',
             visible: true,
             messages: [
                 {
@@ -194,24 +194,14 @@ methods: {
   
         // Funzione per creare una risposta automatica dopo 1 secondo
         setTimeout(() => {
-          const lastMessage = this.selectedChat.messages[this.selectedChat.messages.length - 1];
-          const replyText = this.messages[lastMessage.message.toLowerCase()];
-          if (replyText) {
-            this.selectedChat.messages.push({
+           this.selectedChat.messages.push({                       
               date: new Date().toLocaleTimeString(),
-              message: 'OK',
+              message: 'ok',
               status: 'received'
             });
-          }
         }, 1000);
       }
     },
-    // Funzione per estrarre l'orario dall'array
-    getOrario() {
-      // Estrarre solo l'orario dalla data
-      const orario = this.selectedChat.messages[this.selectedChat.messages.length - 1].date.split(' ')[1];
-      return orario;
-    }
-  }
+}
   
 }).mount('#app');

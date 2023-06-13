@@ -73,7 +73,7 @@
                                 </div>
                                 <div class="chat-details">
                                     <h6>{{ chat.name }}</h6>
-                                    <p>{{ chat.access }}</p>
+                                    <span>{{ chat.access }}</span>
                                 </div>
                             </div>
                             <div class="time">
@@ -83,13 +83,16 @@
                     </div>
                     <!-- FINE SEZIONE CHAT LIST -->
                 </div>
+                <!-- SEZIONE CHAT CONTATTO-->
                 <div class="col-8 p-0">
                     <!-- SEZIONE UTENTE CONTATTATO -->
                     <div v-if="selectedChat" class="chat-header d-flex justify-content-between">
                       <div class="avatar d-flex align-items-center">
                         <img class="rounded-circle" :src="selectedChat.avatar" alt="Immagine Utente">
-                        <h6>{{ selectedChat.name }}</h6>
-                        <p>{{ selectedChat.access }}</p>
+                        <div>
+                            <h6>{{selectedChat.name}}</h6>
+                            <span>{{selectedChat.access}}</span>
+                        </div>
                       </div>
                       <div class="icon d-flex align-items-center">
                         <i class="fa-solid fa-magnifying-glass fa-xl"></i>
@@ -102,8 +105,8 @@
                     <!-- SEZIONE MESSAGGI -->
                     <div v-if="selectedChat" class="message-list">
                       <div v-for="(message, index) in selectedChat.messages" :key="index" class="message" :class="{'received': message.status === 'received', 'sent': message.status === 'sent'}">
-                        <span>{{ message.message }}</span>
-                        <span> 15.30 </span>
+                        <h6>{{ message.message }}</h6>
+                        <span id="ora">15.30</span>
                       </div>
                     </div>
                     <!-- FINE SEZIONE MESSAGGI -->
