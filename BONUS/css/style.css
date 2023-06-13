@@ -1,0 +1,310 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* STYLE BODY */
+body{
+  height: 100vh;
+  background: linear-gradient(180deg, #009688 15%, #D9DBD4 15%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#app{
+  width: 100%;
+}
+
+.container{
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.row{
+  width: 100%;;
+}
+
+.col-4{
+  height: 90vh;
+}
+
+.col-8{
+  height: 90vh;
+  background-color: #eaeaea;
+}
+
+/* STYLE CONTENUTO COL-5 */
+.avatar_utente{
+  width: 100%;
+  background-color: #eaeaea;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.update{
+  width: 100%;
+  background-color: #8edafc;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  cursor: pointer;
+}
+
+.search{
+  width: 100%;
+  background-color: #f9f9f9;
+}
+
+.chat-list{
+  width: 100%;
+  height: calc(100% - 209px);
+  overflow-y: auto;
+}
+
+/* STYLE CONTENUTO COL-8 */
+.chat-header{
+  width: 100%;
+}
+
+.message-list{
+  width: 100%;
+  background: url(../img/mine.jpg);
+  overflow-y: auto;
+  height: calc(100% - 165px);
+}
+
+.chat_footer{
+  width: 100%;
+  bottom: 0;
+  background-color: #fff;
+}
+
+/* STYLE AVATAR UTENTE SX */
+.avatar_utente img{
+  width: 55px;
+  height: 55px;
+  margin: 10px 10px;
+}
+
+.avatar_utente span{
+  font-size: 18px;
+  font-weight: 600;
+  color: black;
+}
+
+.icon{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px 10px;
+}
+
+.avatar_utente .icon i{
+  color: #b1b1b1;
+  margin-right: 20px;
+  margin-left: 5px;
+}
+
+/* STYLE SEZIONE UPDATE */
+.update .icon{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: 15px 15px;
+  background-color: #fff;
+}
+
+.update .icon i{
+  font-size: 20px;
+  margin: 25px 12px;
+  border-radius: 50%;
+  color: #8edafc;
+}
+
+.update .descr a{
+  font-size: 14px;
+  color: #537b8e;
+}
+
+/* STYLE SEARCH BAR */
+.has-search .form-control {
+  padding-left: 5.375rem;
+}
+
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 4.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+}
+
+.fa-search{
+  border-right: 1px solid #eaeaea;
+}
+
+/* SEZIONE CHAT LIST */
+.chat-list {
+  width: 100%;
+  background-color: #fff;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.chat-list .chat {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.chat-list .chat:hover{
+  background-color: #e9ebeb;
+  border-radius: 10px;
+}
+
+.chat-list .avatar {
+  width: 55px;
+  height: 55px;
+  margin: 10px 10px;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.chat-list .time span{
+  color: #b1b1b1;
+  font-size: 12px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.chat-list .chat-details span{
+  font-size: 12px;
+  color: #aaa;
+}
+
+.vison{
+  display: block !important;
+}
+
+.visoff{
+  display: none !important;
+}
+
+/* SEZIONE CHAT AREA COL DX */
+
+/* SEZIONE CHAT-HEADER COL DX */
+
+.chat-header .avatar{
+  position: relative;
+}
+
+.chat-header .avatar img{
+  width: 55px;
+  height: 55px;
+  margin: 10px 10px;
+}
+
+.chat-header .avatar h6{
+  font-size: 18px;
+  font-weight: 600;
+  color: black;
+}
+
+.chat-header .avatar span{
+  font-size: 15px;
+  font-weight: 600;
+  color: rgb(139, 139, 139);
+}
+
+.chat-header .icon-header{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px 10px;
+}
+
+.chat-header .icon i{
+  color: #b1b1b1;
+  margin-right: 20px;
+  margin-left: 5px;
+}
+
+/* FINE SEZIONE CHAT-HEADER COL DX */
+
+/* SEZIONE CHAT AREA MESSAGGI UTENTE */
+.message-list {
+  width: 100%;
+  display: flex;
+  padding: 30px;
+  flex-direction: column;
+  background: url(../img/mine.jpg);
+}
+
+.message {
+  position: relative;
+  padding: 25px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.received {
+  background-color: #f2f2f2;
+  align-self: flex-start;
+  margin: 20px 50px;
+  padding: 10px 90px 5px 10px;
+}
+
+.sent {
+  background-color: #d5f9ba;
+  align-self: flex-end;
+  margin: 20px 50px;
+  padding: 10px 90px 5px 10px;
+}
+
+.date {
+  font-size: 8px;
+  color: #888;
+}
+
+.last-access{
+  margin: 30px 3px 0 5px;
+}
+
+.chat-area .message-list .message.sent h6{
+  font-weight: 700;
+  font-size: 14px;
+  color: #000000;
+  margin: 10px 40px;
+  align-items: flex-start;
+}
+
+#ora{
+  position: absolute;
+  bottom: 5px;
+  right: 3px;
+  font-size: 12px;
+  color: #999999;
+}
+
+/* SEZIONE CHAT FOOTER */
+
+.chat_footer i{
+  font-size: 20px;
+}
+
