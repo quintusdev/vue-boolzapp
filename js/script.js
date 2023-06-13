@@ -175,7 +175,8 @@ createApp({
         }
   ],
   selectedChat: null,
-  newMessage: ''
+  newMessage: '',
+  searchText: ''
   };
 },
 methods: {
@@ -202,6 +203,13 @@ methods: {
         }, 1000);
       }
     },
+    //funzioone di ricerca della seacrh bar
+    Search(){
+        let nameSearched = this.searchText.toLowerCase(); 
+        this.chats.forEach((chats) => {
+        let contactName = chats.name.toLowerCase();
+        chats.visible = contactName.includes(nameSearched);
+    });
+    }
 }
-  
 }).mount('#app');

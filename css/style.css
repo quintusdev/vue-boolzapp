@@ -198,6 +198,14 @@ body{
   color: #aaa;
 }
 
+.vison{
+  display: block !important;
+}
+
+.visoff{
+  display: none !important;
+}
+
 /* SEZIONE CHAT AREA COL DX */
 
 /* SEZIONE CHAT-HEADER COL DX */
