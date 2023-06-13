@@ -73,11 +73,11 @@
                                 </div>
                                 <div class="chat-details">
                                     <h6>{{ chat.name }}</h6>
-                                    <span>{{ chat.access }}</span>
+                                    <span>Ultimo accesso il {{chat.access}}</span>
                                 </div>
                             </div>
                             <div class="time">
-                                <span>12:00</span>
+                                <span>{{ chat.time }}</span>
                             </div>
                         </div>
                     </div>
@@ -91,7 +91,7 @@
                         <img class="rounded-circle" :src="selectedChat.avatar" alt="Immagine Utente">
                         <div>
                             <h6>{{selectedChat.name}}</h6>
-                            <span>{{selectedChat.access}}</span>
+                            <span>Ultimo accesso il {{selectedChat.access}}</span>
                         </div>
                       </div>
                       <div class="icon d-flex align-items-center">
@@ -104,7 +104,7 @@
                   
                     <!-- SEZIONE MESSAGGI -->
                     <div v-if="selectedChat" class="message-list">
-                        <div v-for="(message, index) in selectedChat.messages" :key="index" class="message" :class="{'received': message.status === 'received', 'sent': message.status === 'sent'}">
+                        <div v-for="(message, index) in selectedChat.messages" :key="index" class="message block" :class="{'received': message.status === 'received', 'sent': message.status === 'sent'}">
                             <h6>{{ message.message }}</h6>
                             <span id="ora">{{ message.date }}</span>
                             <div class="btn-group">

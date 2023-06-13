@@ -223,6 +223,12 @@ body{
   position: absolute;
   right: 0;
   top: 0;
+  padding: 0;
+  display: none;
+}
+
+.block:hover .btn-group{
+  display: block;
 }
 
 /* SEZIONE CHAT AREA COL DX */
@@ -284,6 +290,7 @@ body{
   word-break: break-all;
 }
 
+/* STYLE BALOON MESSAGGI */
 .received {
   background-color: #f2f2f2;
   align-self: flex-start;
@@ -297,6 +304,7 @@ body{
   margin: 20px 103px;
   padding: 10px 40px 15px 10px;
 }
+/* fine  BALOON MESSAGGI */
 
 .date {
   font-size: 8px;
