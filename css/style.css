@@ -261,6 +261,8 @@ body{
   padding: 25px;
   margin-bottom: 10px;
   border-radius: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 .received {
