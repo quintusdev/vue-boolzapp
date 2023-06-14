@@ -8,7 +8,6 @@ createApp({
             name: 'Michele',
             avatar: './img/avatar_1.jpg',
             visible: true,
-            access: new Date().toLocaleDateString(),
             time: new Date().toLocaleTimeString(),
             messages: [
                 {
@@ -32,7 +31,6 @@ createApp({
             name: 'Fabio',
             avatar: './img/avatar_2.jpg',
             visible: true,
-            access: new Date().toLocaleDateString(),
             time: new Date().toLocaleTimeString(),
             messages: [
                 {
@@ -56,7 +54,6 @@ createApp({
             name: 'Samuele',
             avatar: './img/avatar_3.jpg',
             visible: true,
-            access: new Date().toLocaleDateString(),
             time: new Date().toLocaleTimeString(),
             messages: [
                 {
@@ -80,7 +77,6 @@ createApp({
             name: 'Alessandro B.',
             avatar: './img/avatar_4.jpg',
             visible: true,
-            access: new Date().toLocaleDateString(),
             time: new Date().toLocaleTimeString(),
             messages: [
                 {
@@ -99,7 +95,6 @@ createApp({
             name: 'Alessandro L.',
             avatar: './img/avatar_5.jpg',
             visible: true,
-            access: new Date().toLocaleDateString(),
             time: new Date().toLocaleTimeString(),
             messages: [
                 {
@@ -118,7 +113,6 @@ createApp({
             name: 'Claudia',
             avatar: './img/avatar_5.jpg',
             visible: true,
-            access: new Date().toLocaleDateString(),
             time: new Date().toLocaleTimeString(),
             messages: [
                 {
@@ -142,7 +136,6 @@ createApp({
             name: 'Federico',
             avatar: './img/avatar_7.jpg',
             visible: true,
-            access: new Date().toLocaleDateString(),
             time: new Date().toLocaleTimeString(),
             messages: [
                 {
@@ -160,7 +153,6 @@ createApp({
         {
             name: 'Davide',
             avatar: './img/avatar_8.jpg',
-            access: new Date().toLocaleDateString(),
             time: new Date().toLocaleTimeString(),
             visible: true,
             messages: [
@@ -193,6 +185,7 @@ methods: {
     },
     // Con questa funzione implemento l'inserimento di un messaggio da input bar
     sendMessage() {
+        //questo if permette di non inviare messaggi vuoti
       if (this.newMessage.trim() !== '') {
         this.selectedChat.messages.push({
           date: new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString(),
@@ -213,26 +206,37 @@ methods: {
     },
     //funzioone di ricerca della seacrh bar
     Search(){
-        let nameSearched = this.searchText.toLowerCase(); 
+        let nameSearched = this.searchText.toLowerCase();
+
         this.chats.forEach((chats) => {
-        let contactName = chats.name.toLowerCase();
-        chats.visible = contactName.includes(nameSearched);
-    });
+            let contactName = chats.name.toLowerCase();
+            chats.visible = contactName.includes(nameSearched);
+        });
     },
+
     //Funzione che al click del menu elimina messaggio cancella l'ultimo
-    deleteMessage() {
-    if (this.selectedChat.messages.length > 0) {
-        this.selectedChat.messages.pop();
+    deleteMessage(index) {
+        this.selectedChat.messages.splice(index, 1);
+    },
+
+    //funzione per visualizzare nella lista l'ultimo messaggio della chat
+    getLastMessage(chat) {
+        const messages = chat.messages;
+        if (messages.length > 0) {
+            const lastMessage = messages[messages.length - 1];
+            return lastMessage.message;
+        }
+        return '';
+    },
+    //funzione per aggiornare la data in base all'invio dei messaggi
+    updateData(chat){
+        const messages = chat.messages;
+        if (messages.length > 0) {
+            const lastData = messages[messages.length - 1];
+            return lastData.date.slice(0, 9);
+        }
+
+        return '';
     }
-},
-//funzione per visualizzare nella lista l'ultimo messaggio della chat
-getLastMessage(chat) {
-    const messages = chat.messages;
-    if (messages.length > 0) {
-        const lastMessage = messages[messages.length - 1];
-        return lastMessage.message;
-    }
-    return '';
-}
 }
 }).mount('#app');

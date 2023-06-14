@@ -33,7 +33,8 @@ body{
 .col-8{
   position: relative;
   height: 90vh;
-  background-color: #eaeaea;
+  background: url(../img/intro.png);
+  background-size: cover;
 }
 
 /* STYLE CONTENUTO COL-5 */
@@ -83,7 +84,7 @@ body{
   width: 100%;
   bottom: 0;
   left: 0;
-  background-color: #fff;
+  background-color: #eaeaea;
 }
 
 /* STYLE AVATAR UTENTE SX */

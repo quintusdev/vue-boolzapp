@@ -77,7 +77,7 @@
                                 </div>
                             </div>
                             <div class="time">
-                                <span>{{ chat.access }}</span>
+                                <span>{{ updateData(chat) }}</span>
                             </div>
                         </div>
                     </div>
@@ -113,7 +113,7 @@
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
                                     <li><button class="dropdown-item" type="button">Info messaggio</button></li>
-                                    <li><button class="dropdown-item" type="button" @click="deleteMessage()">Elimina messaggio</button></li>
+                                    <li><button class="dropdown-item" type="button" @click="deleteMessage(index)">Elimina messaggio</button></li>
                                 </ul>
                             </div>
                     </div>
