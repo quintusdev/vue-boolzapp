@@ -70,6 +70,7 @@ body{
 /* STYLE CONTENUTO COL-8 */
 .chat-header{
   width: 100%;
+  background-color: #eaeaea;
 }
 
 .message-list{
@@ -77,6 +78,7 @@ body{
   background: url(../img/mine.jpg);
   overflow-y: auto;
   height: calc(100% - 150px);
+  background-color: #eaeaea;
 }
 
 .chat_footer{
